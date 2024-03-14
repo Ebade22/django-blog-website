@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJANGO FORMS AND USER AUTHENTICATION SYSTEM</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{%url 'home' %}">Home</a></li>
+                {%if user.is_authenticated%}
+                <li><a href="{%url 'logout-confirm'%}">Logout</a></li>
+                <li><a href="{%url 'profile'%}">Profile</a></li>
+                {%else%}
+
+                <li><a href="{%url 'create-account'%}">Sign Up</a></li>
+                <li><a href="{%url 'user-login'%}">Login</a></li>
+                {%endif%}
+            </ul>
+        </nav>
+    </header>
+    {%block content%}
+
+    {%endblock content%}
+</body>
+</html>

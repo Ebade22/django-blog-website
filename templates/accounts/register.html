@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+
+
+{%block content%}
+<div style="display: flex; align-items: center; justify-content: center; width: 100%;">
+    <d style="width: 50%;">
+<h1>User SignUp</h1>
+<div>
+    {%if form.errors%}
+    <p style="color: red;">{{form.errors}}</p>
+    {%endif%}
+</div>
+<form action="" method="post">
+    {%csrf_token %}
+    <div>
+        {{form.as_p}}
+    </div>
+    <input type="submit" value="Create Account">
+</form>
+</div>
+</div>
+
+{%endblock content%}
